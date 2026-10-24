@@ -1,16 +1,40 @@
 {
   "name": "@rcdnc/drizzle-migrate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Aplica migrations do Drizzle (Postgres) com o migrator oficial e recusa as que «passariam» sem correr: .sql fora do journal, when fora de ordem e migration saltada.",
   "type": "module",
   "main": "src/index.js",
-  "exports": { ".": "./src/index.js" },
-  "bin": { "drizzle-migrate": "bin/drizzle-migrate.js" },
-  "files": ["src", "bin"],
-  "engines": { "node": ">=20" },
-  "scripts": { "test": "node --test" },
-  "peerDependencies": { "drizzle-orm": ">=0.45.0 <1", "pg": "^8.11.0" },
-  "devDependencies": { "drizzle-orm": "0.45.2", "pg": "8.20.0" },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "bin": {
+    "drizzle-migrate": "bin/drizzle-migrate.js"
+  },
+  "files": [
+    "src",
+    "bin"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "peerDependencies": {
+    "drizzle-orm": ">=0.45.0 <1",
+    "pg": "^8.11.0"
+  },
+  "devDependencies": {
+    "drizzle-orm": "0.45.2",
+    "pg": "8.20.0"
+  },
   "license": "MIT",
-  "repository": { "type": "git", "url": "git+https://github.com/Ricardo-Dinucci/drizzle-migrate.git" }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ricardo-Dinucci/drizzle-migrate.git"
+  },
+  "types": "src/index.d.ts"
 }
